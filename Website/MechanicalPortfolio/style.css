@@ -12,7 +12,7 @@ body{
 .container{
 margin: 2% auto;
 }
-.container a{
+.home a{
     margin: 30px 30px;
     color: #ffffff;
     text-decoration: none;
@@ -20,7 +20,7 @@ margin: 2% auto;
     position: relative;
 }
 
-.container a::after {
+.home a::after {
     content: "";
     width: 0%;
     height: 3px;
@@ -31,10 +31,24 @@ margin: 2% auto;
     transition: 0.5s;
 }
 
-.container a:hover::after {
+.home a:hover::after {
     width: 100%;
 }
-
+.container a{
+    margin-top: 30px;
+}
+.container a{
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 20px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.container a:hover{
+    color: #ff004F;
+    transform: translateY(-5px);
+}
 .row{
     display: flex;
     gap: 10px;
