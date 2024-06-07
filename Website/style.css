@@ -39,8 +39,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     position: relative;
-    
-    
+
 }
 nav ul li a::after{
     content: "";
@@ -231,7 +230,6 @@ nav ul li a:hover::after{
 }
 .contact-right{
     width: 100%;
-
 }
 form input, form textarea{
     width: 100%;
@@ -270,10 +268,10 @@ form .btn.btn2{
     }
 
     nav ul li {
-        margin: 10px 4vw;
+        margin: 10px 3.8vw;
     }
     nav ul li a {
-        font-size: 3.6vw;
+        font-size: 3.4vw;
     }
     .header-text {
         margin-top: 40%;
