@@ -9,36 +9,62 @@
 <body>
     <div class="container">
 
-    <div class="home">        
-        <a href="/Website/index.html">Home</a>
+        <!-- Home Button -->
+        <div class="home">        
+            <a href="/Website/index.html">Home</a>
+        </div>
+
+        <!-- Project Rows -->
+        <div class="row">
+            <div class="column" onclick="toggleText(this)">
+                <h1>Senior Capstone Toolio</h1>
+                <p>Opted to design a autosorting toolbox.</p>
+                <img src="images/sortatool.png" alt="Welding image">
+                <div class="hidden-text">
+                    The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify
+                    the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism. In addition to participating in the overall
+                    process from requirement setting to final fabrication and test, I utilized CAD modeling to analyze different design concepts.
+
+                </div>
+            </div>
+            <div class="column" onclick="toggleText(this)">
+                <h1>Battle Bots</h1>
+                <p>Robo Jackets Battle Bots 3Ib team member.</p>
+                <img src="images/BattleBots.jpg" alt="Image of Battlebot internal functions.">
+                <div class="hidden-text">
+                    Engaged in the RoboJackets club at Georgia Tech, specifically as part of the Three Pound Battle Bots team. Collaborating with a team of
+                10, we design, manufacture, and operate a functional RC robot aimed at competing with other three-pound robots from Georgia Tech
+                    beyond. Have further developed skills to work with a team on a complex technical project to achieve a goal while staying within
+                design restraints. Have incorporated knowledge of material science and kinematics to produce a robust, light-weight, effective robot.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column" onclick="toggleText(this)">
+                <h1>Neptr</h1>
+                <p>This is a photo of one of my early projects!</p>
+                <img src="images/shipwrecked.png" alt="Neptr project image">
+                <div class="hidden-text">
+                    Background information on the Neptr project and what it involved.
+                </div>
+            </div>
+            <div class="column" onclick="toggleText(this)">
+                <h1>Chess Board</h1>
+                <p>This is a mid-year design that we are moving towards manufacturing.</p>
+                <div class="hidden-text">
+                    Insights into the Chess Board design and how it was developed.
+                </div>
+            </div>
+        </div>
+        
     </div>
 
-    <div class="row">
-        <div class="column">
-            <h1>Welding</h1>
-            <p>Here is photo of one of my first welds!</p>
-            <a href="#" class="icons"><img src="images/welding.jpg" alt=""></a>
-        </div>
-        <div class="column">
-            <h1>Battle Bots</h1>
-            <p>This is the mid year design, as of now 01/12/2024 we are beginning to develop the manufacturing stage of the robot.</p>
-            <a href="#" class="icons"><img src="images/sortatool.png" alt=""></a>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="column">
-            <h1>Neptr</h1>
-            <p>Here is photo of one of my first welds!</p>
-            <a href="#" class="icons"><img src="images/shipwrecked.png" alt="image"></a>
-        </div>
-        <div class="column">
-            <h1>Chess Board</h1>
-            <p>This is the mid year design, as of now 01/12/2024 we are beginning to develop the manufacturing stage of the robot.</p>
-        </div>
-                
-    </div>
-            
-</div>
+    <script>
+        function toggleText(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
