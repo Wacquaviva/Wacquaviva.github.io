@@ -67,9 +67,27 @@ body {
     background-color: #262626;
     border-radius: 10px;
     transition: transform 0.5s, background-color 0.5s;
-    text-align: center;
+    text-align: top;
     overflow: hidden;
+
+    /* Add Flexbox properties to center image */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
 }
+
+.column img {
+    width: auto; /* Keep original image ratio */
+    max-width: 100%; /* Adjust width to fit container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+    z-index: 1;
+    justify-content: center;
+
+}
+
 
 .column:hover {
     transform: translateY(-5px); /* Hover animation */

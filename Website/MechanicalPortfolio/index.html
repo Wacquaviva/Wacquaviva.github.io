@@ -1,12 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+    <!-- Character encoding for proper rendering -->
     <meta charset="UTF-8">
+    
+    <!-- Ensures responsive behavior on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Page title shown in browser tab -->
     <title>Mechanical Portfolio</title>
 </head>
 <body>
+
+    <!-- Main container for page content -->
     <div class="container">
 
         <!-- Home Button -->
@@ -14,53 +23,80 @@
             <a href="/Website/index.html">Home</a>
         </div>
 
-        <!-- Project Rows -->
+        <!-- First Row of Projects -->
         <div class="row">
+            <!-- First Project: Senior Capstone Toolio -->
             <div class="column" onclick="toggleText(this)">
                 <h1>Senior Capstone Toolio</h1>
-                <p>Opted to design a autosorting toolbox.</p>
-                <img src="images/sortatool.png" alt="Welding image">
+                <p>Opted to design an autosorting toolbox.</p>
+                <img src="images/SeniorCapstone.png" alt="Image of an auto-sorting toolbox">
                 <div class="hidden-text">
-                    The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify
-                    the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism. In addition to participating in the overall
-                    process from requirement setting to final fabrication and test, I utilized CAD modeling to analyze different design concepts.
-
+                    The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism. I utilized CAD modeling to analyze different design concepts and participated in the overall process from requirements to final fabrication and testing.
                 </div>
             </div>
+
+            <!-- Second Project: Battle Bots -->
             <div class="column" onclick="toggleText(this)">
                 <h1>Battle Bots</h1>
-                <p>Robo Jackets Battle Bots 3Ib team member.</p>
-                <img src="images/BattleBots.jpg" alt="Image of Battlebot internal functions.">
+                <p>RoboJackets Battle Bots 3 lb team member.</p>
+                <img src="images/BattleBots.jpg" alt="Image of Battlebot internal functions">
                 <div class="hidden-text">
-                    Engaged in the RoboJackets club at Georgia Tech, specifically as part of the Three Pound Battle Bots team. Collaborating with a team of
-                10, we design, manufacture, and operate a functional RC robot aimed at competing with other three-pound robots from Georgia Tech
-                    beyond. Have further developed skills to work with a team on a complex technical project to achieve a goal while staying within
-                design restraints. Have incorporated knowledge of material science and kinematics to produce a robust, light-weight, effective robot.
-
+                    Engaged as part of the RoboJackets 3 lb Battle Bots team at Georgia Tech. We design, manufacture, and operate a functional RC robot competing with other three-pound robots. I developed skills in working with teams on complex technical projects, while incorporating knowledge of material science and kinematics to create an effective, light-weight robot.
                 </div>
             </div>
         </div>
 
+        <!-- Second Row of Projects -->
         <div class="row">
+            <!-- Project: Hytech Racing -->
             <div class="column" onclick="toggleText(this)">
-                <h1>Neptr</h1>
-                <p>This is a photo of one of my early projects!</p>
-                <img src="images/shipwrecked.png" alt="Neptr project image">
+                <h1>Hytech Racing</h1>
+                <p>Hytech racing Controls / Suspension team member.</p>
+                <img src="images/HytechRacing.png" alt="Hytech car racing image">
                 <div class="hidden-text">
-                    Background information on the Neptr project and what it involved.
+                    HyTech Racing is an award-winning student-run organization at the Georgia Institute of Technology dedicated to rigorous design and development of Formula SAE electric vehicles. Work as Sub-Team member for Controls / Suspension.
                 </div>
             </div>
+
+            <!-- Project: Chess Board -->
             <div class="column" onclick="toggleText(this)">
-                <h1>Chess Board</h1>
-                <p>This is a mid-year design that we are moving towards manufacturing.</p>
+                <h1>Shipwrecked Blossoms</h1>
+                <p>Culturally inpsired creative design project.</p>
+                <img src="images/shipwrecked.png" alt="Image of CAD model of wrecked ship on jetty.">
                 <div class="hidden-text">
-                    Insights into the Chess Board design and how it was developed.
+                    My product is a representation of the life after death of sunken boats. In my coastal town, fishing has a huge market, and many go on boats for enjoyment as well. Due to this, accidents happen and sometimes, boats sink, or more commonly crash. While this marks the death of the boat, it also marks the beginning of a new habitat for wildlife including fish and plants at the sea floor. To represent this, I made a flower vase consisting of 2 halves of a boat, a base, and a lobster trap buoy. I will incorporate Natural elements by filling the base with sand, using real rocks to create a fake Jetty in the center, and including shells and sea life that can survive and provide nutrients for the plants, prolonging the life of the flowers held inside the vase.
                 </div>
             </div>
         </div>
-        
-    </div>
 
+        <!-- Third Row of Projects -->
+        <div class="row">
+            <!-- Project: Python Project -->
+            <div class="column" onclick="toggleText(this)">
+                <h1>Live streaming bot.</h1>
+                <p>Python Project connecting enhancing livestream capabilities.</p>
+                <img src="images/PythonProject.jpg" alt="Hytech car racing image">
+                <div class="hidden-text">
+                    Developed a software solution using Python to enable real-time interactions between TikTokLive and other clients through multiple APIs. The platform allows users to engage via live chat, triggering features like text-to-speech, in-game enemy spawning, and real-life light effects. This project enhanced my skills in Python programming, API integration, software development, and problem-solving, while also providing experience in managing complex projects and negotiating service value.
+                </div>
+            </div>
+
+            <!-- Project: Chess Board -->
+            <div class="column" onclick="toggleText(this)">
+                <h1>More Projects Soon!</h1>
+                <p>Currently working on development of website for GT startup.</p>
+                <img src="images/MoreToCome.png" alt="Blank Image">
+                <div class="hidden-text">
+                    Come back soon...
+                </div>
+            </div>
+        </div>
+
+        <!-- Duplicate content removed for clarity -->
+
+    </div> <!-- End of container div -->
+    
+    <!-- JavaScript to toggle text display when clicking on a project -->
     <script>
         function toggleText(element) {
             element.classList.toggle('active');
