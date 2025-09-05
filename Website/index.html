@@ -8,19 +8,25 @@
     <script src="https://kit.fontawesome.com/3042dfeb28.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav class="scroll-nav">
+        <a></a>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="MechanicalPortfolio/index.html">Portfolio</a></li>
+            <li><a href="Contact/index.html">Contacts</a></li>
+            
+        </ul>
+    </nav>
     <div id= "header">
         <div class="container">
-            <nav>
-            <a></a>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#services">Portfolio</a></li>
-                <li><a href="#contact">Contacts</a></li>
-                
-            </ul>
-            </nav>
             <div class="cursor-blob"></div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="MechanicalPortfolio/index.html">Portfolio</a></li>
+                    <li><a href="Contact/index.html">Contacts</a></li>
+                </ul>
+            </nav>
             <div class="header-text">
                 <p></p><p></p>
                 <h1>Hi my name is William Acquaviva</h1>
@@ -40,16 +46,13 @@
                     <h1 class="sub-title">About Me</h1>
                     <p>This website is most likley not up to date, sorry</p>
                     <div class="tab-titles"> 
-                        <p class="tab-links active-link" onclick="opentab('about-info')">About me</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links active-link" onclick="opentab('me-info')">Who am I</p>
+                        <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
                     </div>
     <!----------------------------------------Tab Contents----------------------------------->
-                    <div class="tab-contents active-tab" id="about-info">
+                    <div class="tab-contents active-tab" id="me-info">
                         <p>I'm a third-year mechanical engineering student at Georgia Tech, originally from Massachusetts. I'm passionate about applying my degree to tackle the world's most complex engineering challenges.
 Outside of academics, I enjoy playing soccer, hiking, following sports, and coding</p><br>
-                    </div>
-                    <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>Raytheon, Mechanical Engineering – Patriot Missile Team Intern</span><br>May 2025 - August 2025<br>Collaborated on redesign of critical Patriot missile sub-assembly; ran 30-part tolerance stack for fit. Designed, built, and tested CCA prototype to validate fit, confirm design, and guide engineering teams. Calculated and verified center of gravity of major Patriot assembly within ±0.1 lb for optimal mass distribution. Conducted DFM reviews with manufacturing engineers, identifying 5 critical issues to improve efficiency and reduce cost.</li>
                         </ul>
@@ -59,68 +62,20 @@ Outside of academics, I enjoy playing soccer, hiking, following sports, and codi
                             <li><span>Real-Time Interactive Livestream Service Program</span><br>January 2024 – Present<br>Developed a Python software solution enabling real-time interactions between TikTokLive and other clients. Created an API-driven platform enabling live chat interactions to trigger various events, including in-game enemy spawning. Enhanced skills in Python programming, API integration, software development, and problem-solving. Gained experience in managing complex projects and negotiating service value.</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="skills">
-                        <h3>Programming</h3>
-                        <p>HTML/CSS/Javascript (intermediate), C++ (beginner), Java (beginner), MATLAB (intermediate), Python (intermediate)</p><br>
-                        <h3>Technical</h3>
+                    <div class="tab-contents" id="hobbies">
+                        <h3>Hobbies</h3>
+                        <p>I enjoy playing soccer, hiking, following sports, and coding.</p><br>
+                        <h3>Technical Skills</h3>
                         <p>AutoCAD, Fusion 360, SolidWorks, Catia, Creo Parametric, Windchill PDM</p><br>
-                        <h3>Machinery</h3>
+                        <h3>Machinery Skills</h3>
                         <p>Waterjet (proficient), CNC (proficient), 3D Printing (proficient), Welding (proficient), Bed Lathe (proficient)</p><br>
-                        <h3>Language</h3>
+                        <h3>Language Skills</h3>
                         <p>English (native speaker), Spanish (intermediate)</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!----------------------------------------Portfolio----------------------------------->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">Portfolio</h1>
-            <div class="portfolio-tab">
-                <div>
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h2>Mechanical Engineering</h2>
-                    <p>Below is a link to my portfolio for all Engineering based projects!</p>
-                    <a href="MechanicalPortfolio/index.html">Learn More</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-computer"></i>
-                    <h2>Computer Science</h2>
-                    <p>Below is a link to my portfolio for all Computer Science based projects!</p>
-                    <a href="https://github.com/Wacquaviva/CSPortfolio">Learn More</a>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-<!----------------------------------------Contact----------------------------------->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> William.Acquaviva1@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> 978-631-6644</p>
-                <div class="icons">
-                    <a href="https://www.instagram.com/wacqua04/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/will.acquaviva"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://gatech.slack.com/team/U05P0JVR0Q3"><i class="fa-brands fa-slack"></i></i></a>
-                    <a href="https://www.linkedin.com/in/williamacquaviva"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <a href="Images/Resume2024.pdf" download class="btn btn2">Download Resume</a>
-            </div>
-            <div class="contact-right">
-                <form name = 'submit-to-google-sheet'>
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" Name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button class="btn btn2">Submit</button>
-                </form>
-                <span id = msg></span>
-            </div>
-    </div>
-</div>
 
 
 <script>
@@ -233,6 +188,16 @@ Outside of academics, I enjoy playing soccer, hiking, following sports, and codi
     createSmallBlob();
 </script>
 <script>
+    const scrollNav = document.querySelector('.scroll-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > window.innerHeight * 0.2) {
+            scrollNav.classList.add('scrolled');
+        } else {
+            scrollNav.classList.remove('scrolled');
+        }
+    });
+</script>
+<script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw-ughagpqXJOjRRzdPuwixlcZbHmghucCPPB5b9-m4J5G2w3ZuoOKzjrCQbCAN-IFMVg/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")
@@ -250,6 +215,18 @@ form.addEventListener('submit', e => {
     .catch(error => console.error('Error!', error.message))
 })
 
+</script>
+<script>
+    // NUCLEAR FIX: Force header-nav visibility after everything else loads
+    document.addEventListener('DOMContentLoaded', () => {
+        const headerNav = document.querySelector('.header-nav');
+        if (headerNav) {
+            headerNav.style.setProperty('display', 'flex', 'important');
+            headerNav.style.setProperty('visibility', 'visible', 'important');
+            headerNav.style.setProperty('opacity', '1', 'important');
+            headerNav.style.setProperty('pointer-events', 'auto', 'important');
+        }
+    });
 </script>
 </body>
 </html>

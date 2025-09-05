@@ -40,19 +40,105 @@ body{
 }
 #header{
     width: 100%;
-    height: 100%;
+    height: 33vh;
     background-image: url(Images/background.jpg);
     background-size: cover; 
-    background-position: center;
-}
-.container{
-    padding: 10px 10%;
+    background-position: bottom;
+    padding: 20px 0;
+    position: relative;
 }
 nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 10%;
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+nav.scrolled {
+    background-color: #080808;
+    padding: 10px 10%;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Header Navigation Styles */
+.header-nav {
+    position: fixed; /* Debug: fixed to viewport */
+    top: 0px; /* Debug: top of viewport */
+    right: 0px; /* Debug: right of viewport */
+    z-index: 99999; /* Debug: highest z-index */
+    background: blue !important; /* Debug: unmistakable background */
+    border: 5px solid yellow !important; /* Debug: unmistakable border */
+    padding: 20px !important;
+    margin: 0 !important; /* Ensure no external margin */
+    width: auto !important; /* Ensure it's not collapsed */
+    height: auto !important; /* Ensure it's not collapsed */
+    opacity: 1 !important; /* Ensure visibility */
+    visibility: visible !important; /* Ensure visibility */
+}
+
+.header-nav ul {
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 25px !important;
+    background: orange !important; /* Debug: unmistakable background */
+    border: 3px solid white !important; /* Debug: unmistakable border */
+}
+
+.header-nav ul li {
+    border: 2px solid green !important; /* Debug: unmistakable border */
+}
+
+.header-nav ul li a {
+    color: red !important;
+    text-decoration: none !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    padding: 8px 16px !important;
+    background: purple !important; /* Debug: unmistakable background */
+}
+
+.header-nav ul li a:hover {
+    background: rgba(255, 0, 79, 0.2);
+    color: #ff004f;
+    transform: translateY(-2px);
+}
+
+.header-nav ul li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #ff004f;
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.header-nav ul li a:hover::after {
+    width: 80%;
+}
+
+.container{
+    padding: 10px 10%;
 }
 .logo{
     width: 140px;
@@ -64,7 +150,7 @@ nav ul li{
 
 }
 nav ul li a{
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     font-size: 20px;
     position: relative;
@@ -84,7 +170,7 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .header-text{
-    margin-top: 20%;
+    margin-top: 5vh;
 }
 .header-text h1{
     font-size: 3.8vw;
@@ -325,6 +411,22 @@ form .btn.btn2{
     .tab-links {
         margin-right: 10px;
         font-size: 16px;
+    }
+
+    /* Header Navigation Mobile Styles */
+    .header-nav {
+        right: 5%;
+        top: 15px;
+        padding: 8px 15px;
+    }
+
+    .header-nav ul {
+        gap: 15px;
+    }
+
+    .header-nav ul li a {
+        font-size: 14px;
+        padding: 6px 12px;
     }
     
 }

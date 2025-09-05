@@ -15,15 +15,36 @@
 </head>
 <body>
 
-    <div class="cursor-blob"></div>
+    <nav class="scroll-nav">
+        <a></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="../Contact/index.html">Contacts</a></li>
+            
+        </ul>
+    </nav>
+    <div id="header">
+        <div class="container">
+            <div class="cursor-blob"></div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="../Contact/index.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p></p><p></p>
+                <h1>Mechanical Portfolio</h1>
+                <br><br><br><br>
+            </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main container for page content -->
-    <div class="container">
-
-        <!-- Home Button -->
-        <div class="home">        
-            <a href="/Website/index.html">Home</a>
-        </div>
+    <div class="content-container">
 
         <!-- First Row of Projects -->
         <div class="row">
@@ -83,7 +104,43 @@
                 </div>
             </div>
 
-            <!-- Project: Chess Board -->
+            <!-- New Project: Patriot Missile Team -->
+            <div class="column" onclick="toggleText(this)">
+                <h1>Patriot Missile Team Intern</h1>
+                <p>Raytheon (RTX) – Patriot Missile Team Intern May 2025 - August 2025</p>
+                <img src="images/patriotimage.jpg" alt="Image of Patriot Missile Team project">
+                <div class="hidden-text">
+                    <p>As an engineer on the Patriot missile program at Raytheon, I improved manufacturing efficiency by conducting DFM reviews that identified five critical issues and updating a drawing specification that cut supplier errors by 95%. My analytical work included performing a 30-part tolerance stack-up to ensure sub-assembly fit and calculating an assembly's center of gravity to within ±0.1 lb. I solved a key production issue by designing a new CCA prototype and creating three custom test fixtures, which eliminated all post-installation heat cycle failures. Additionally, I managed the engineering change request process for the Patriot shelters, ensuring strict configuration control and 100% BOM accuracy.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Row of Projects (formerly two separate rows) -->
+        <div class="row">
+            <!-- New Project: Plate Pulse -->
+            <div class="column" onclick="toggleText(this)">
+                <h1>Plate Pulse</h1>
+                <p>Developing a social media application for automotive enthusiasts.</p>
+                <img src="images/platepulse.png" alt="Image for Plate Pulse project">
+                <div class="hidden-text">
+                    <p>As the Founder of Plate Pulse, I am developing a cross-platform social media application using React Native to connect the automotive enthusiast community. I implemented a core feature for license plate lookups by integrating a third-party DMV API with end-to-end data encryption. To scale the platform, I am also assembling a team of software engineers and marketing personnel to boost market visibility and drive user acquisition.</p>
+                </div>
+            </div>
+
+            <!-- Project: Elephant in the Room -->
+            <div class="column" onclick="toggleText(this)">
+                <h1>Elephant in the Room</h1>
+                <p>My ME 2110 Project.</p>
+                <img src="images/me2110.png" alt="Image of Elephant in the Room project">
+                <div class="hidden-text">
+                    <p>Details about the 'Elephant in the Room' ME 2110 project will go here.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Row: More Projects Soon! -->
+        <div class="row">
+            <!-- Original Project: More Projects Soon! -->
             <div class="column" onclick="toggleText(this)">
                 <h1>More Projects Soon!</h1>
                 <p>Currently working on development of website for GT startup.</p>
@@ -93,8 +150,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Duplicate content removed for clarity -->
 
     </div> <!-- End of container div -->
     
@@ -197,6 +252,16 @@
 
         // Start creating small blobs
         createSmallBlob();
+    </script>
+    <script>
+            const scrollNav = document.querySelector('.scroll-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > window.innerHeight * 0.2) {
+            scrollNav.classList.add('scrolled');
+        } else {
+            scrollNav.classList.remove('scrolled');
+        }
+    });
     </script>
 </body>
 </html>

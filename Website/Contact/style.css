@@ -17,7 +17,7 @@
     filter: blur(60px);
     opacity: 0.7;
     z-index: -1;
-    pointer-events: none; /* Ensures the blob doesn't interfere with mouse events */
+    pointer-events: none;
     transition: transform 0.1s ease-out;
 }
 
@@ -206,121 +206,82 @@ body {
     padding: 0 2%;
 }
 
-/* Home Button Styling */
-.home a {
-    display: inline-block;
-    margin: 2% auto;
-    padding: 15px 25px;
-    border-radius: 15px;
-    background-color: #766464;
-    color: #fff;
-    font-size: 30px;
-    text-decoration: none;
-    position: relative;
-    transition: background-color 0.5s;
-}
-
-.home a::after {
-    content: "";
-    width: 0;
-    height: 3px;
-    background: #ff004f;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: width 0.5s ease-in-out;
-}
-
-.home a:hover::after {
-    width: 100%;
-}
-
-.home a:hover {
-    background-color: #8d8d8d;
-}
-
-/* Row & Column Flexbox Layout */
 .row {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/*------------------------Contact----------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
     margin-top: 30px;
 }
-
-.column {
-    position: relative;
-    flex: 1;
+.contact-left p i{
+    margin-right: 15px;
+    color: #ff004F;
+    font-size: 25px;
+}
+.icons{
+    margin-top: 30px;
+}
+.icons a{
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 20px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.icons a:hover{
+    color: #ff004F;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004F;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
     padding: 20px;
-    background-color: #262626;
-    border-radius: 10px;
-    transition: transform 0.5s, background-color 0.5s;
-    text-align: top;
-    overflow: hidden;
-
-    /* Add Flexbox properties to center image */
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
+    margin: 30px 0;
+    font-size: 15px;
 }
-
-.column img {
-    width: auto; /* Keep original image ratio */
-    max-width: 100%; /* Adjust width to fit container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    transition: transform 0.5s, opacity 0.5s;
-    z-index: 1;
-    justify-content: center;
-
-}
-
-
-.column:hover {
-    transform: translateY(-5px); /* Hover animation */
-    background: #ff004f;
-}
-
-.column h1, .column p {
-    z-index: 2;
-    position: relative;
-}
-
-.column img {
+.contact-right{
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.5s, opacity 0.5s;
-    z-index: 1;
 }
-
-/* Text behind image when clicked */
-.hidden-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
     font-size: 18px;
-    border-radius: 10px;
-    opacity: 0;
-    z-index: 3;
-    transition: opacity 0.5s ease-in-out;
+    border-radius: 6px;
 }
-
-/* Active state to show the text */
-.column.active .hidden-text {
-    opacity: 1;
+form .btn.btn2{
+    padding: 14px 22px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
 }
-
-.column.active img {
-    opacity: 0.05; /* Dim the image when text is shown */
+#msg{
+    color: #61b752;
+    display: block;
+    margin-top: -20px;
 }
 
 /* Responsive Design */
@@ -333,17 +294,13 @@ body {
         flex-direction: column;
     }
 
-    .home a {
-        font-size: 20px;
-        padding: 10px 15px;
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+        margin-bottom: 20px;
     }
 
-    .column h1 {
-        font-size: 20px;
-    }
-
-    .column p {
-        font-size: 14px;
+    .sub-title {
+        font-size: 36px;
     }
 
     /* Header Navigation Mobile Styles */
