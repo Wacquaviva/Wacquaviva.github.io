@@ -391,8 +391,16 @@
             // After animation ends, hide modal and cleanup
             const onAnimEnd = () => {
                 modal.classList.remove('closing');
+                modal.style.display = 'none'; // Explicitly hide the modal
                 modal.removeEventListener('animationend', onAnimEnd);
                 document.body.style.overflow = 'auto';
+                
+                // Clear content to prevent memory leaks
+                document.querySelector('.project-title').textContent = '';
+                document.querySelector('.project-subtitle').textContent = '';
+                document.querySelector('.project-description').innerHTML = '';
+                document.querySelector('.main-image').src = '';
+                document.querySelector('.thumbnail-strip').innerHTML = '';
             };
             modal.addEventListener('animationend', onAnimEnd);
         }
