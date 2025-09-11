@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+/* Prevent iOS Safari from auto-upsizing text */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 .cursor-blob {
     position: fixed;
     top: 0;
@@ -702,5 +708,31 @@ body {
 
     .project-description {
         font-size: 0.85em !important;
+    }
+}
+
+/* Portfolio nav sizing to match other pages on mobile */
+@media only screen and (max-width: 768px) {
+    .scroll-nav {
+        padding: 8px 6%;
+    }
+    .scroll-nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+    .scroll-nav ul li {
+        margin: 6px 0;
+    }
+    .scroll-nav ul li a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .scroll-nav ul li a {
+        font-size: 13px;
     }
 }
