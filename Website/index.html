@@ -20,15 +20,8 @@
     <div id= "header">
         <div class="container">
             <div class="cursor-blob"></div>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="MechanicalPortfolio/index.html">Portfolio</a></li>
-                    <li><a href="Contact/index.html">Contacts</a></li>
-                </ul>
-            </nav>
+            
             <div class="header-text">
-                <p></p><p></p>
                 <h1>Hi my name is William Acquaviva</h1>
                 <br><br><br><br>
             </div>
@@ -40,25 +33,24 @@
         <div class = "container">
             <div class = row>
                 <div class="about-col-1">
-                    <img src="Images/me.jpg" alt="Picture of Will Acquaviva">
+                    <div class="image-carousel">
+                        <img src="Images/me.jpg" alt="Picture of Will Acquaviva" class="carousel-img active">
+                        <img src="Images/me2.jpg" alt="Will in Sanfran" class="carousel-img">
+                        <img src="Images/me3.jpg" alt="" class="carousel-img">
+                        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-counter"></div>
+                    </div>
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>This website is most likley not up to date, sorry</p>
-                    <div class="tab-titles"> 
-                        <p class="tab-links active-link" onclick="opentab('me-info')">Who am I</p>
-                        <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
-                    </div>
-    <!----------------------------------------Tab Contents----------------------------------->
-                    <div class="tab-contents active-tab" id="me-info">
-                        <p>Hi, my names Will! I'm a third-year mechanical engineering student at Georgia Tech, originally from Massachusetts. I'm passionate about applying my degree to tackle the world's most complex engineering challenges.
-Outside of academics, I enjoy playing soccer, hiking, following sports, and coding.</p><br>
-                    </div>
-                    <div class="tab-contents" id="hobbies">
-                        <h3>Hobbies</h3>
-                        <p>I enjoy playing soccer, hiking, following sports, and coding.</p><br>
-                    </div>
-                </div>
+                    <p>Hi, my name is Will. I’m originally   from a small town in Massachusetts, and I’m currently pursuing a bachelor’s degree in Mechanical Engineering at Georgia Tech, graduating in May 2027.<br><br>
+I’ve always been fascinated by how things work, and that curiosity has driven me to seek out some of the most complex engineering challenges I can find. Lately, that’s led me toward the defense space, where I’m actively exploring opportunities to grow and contribute.<br><br>
+Outside of school, I enjoy working on personal projects, mostly in computer science, and I’m currently developing the groundwork for an autonomous fleet of mining drones designed for lunar applications.<br><br>
+If you're reading this and your company is working on tough, meaningful problems, I’d love to connect!<br><br>
+Feel free to look at my Resume and Portfolio!
+</p>
+
             </div>
         </div>
     </div>
@@ -66,20 +58,6 @@ Outside of academics, I enjoy playing soccer, hiking, following sports, and codi
 
 <script>
 
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link")
-        document.getElementById(tabname).classList.add("active-tab")
-    };
-</script>
-<script>
     const blob = document.querySelector(".cursor-blob");
 
     document.body.addEventListener("pointermove", (event) => {
@@ -174,14 +152,50 @@ Outside of academics, I enjoy playing soccer, hiking, following sports, and codi
     createSmallBlob();
 </script>
 <script>
-    const scrollNav = document.querySelector('.scroll-nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > window.innerHeight * 0.2) {
-            scrollNav.classList.add('scrolled');
-        } else {
-            scrollNav.classList.remove('scrolled');
-        }
+    const carouselImages = document.querySelectorAll('.image-carousel .carousel-img');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const imageCounter = document.querySelector('.image-counter');
+    let currentImageIndex = 0;
+
+    function showImage(index) {
+        carouselImages.forEach((img, i) => {
+            if (i === index) {
+                img.classList.add('active');
+            } else {
+                img.classList.remove('active');
+            }
+        });
+        updateImageCounter();
+    }
+
+    function updateImageCounter() {
+        imageCounter.textContent = `${currentImageIndex + 1} / ${carouselImages.length}`;
+        imageCounter.style.display = 'block'; // Ensure counter is visible
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+        showImage(currentImageIndex);
     });
+
+    nextBtn.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        showImage(currentImageIndex);
+    });
+
+    // Initial image display
+    showImage(currentImageIndex);
+</script>
+<script>
+    const scrollNav = document.querySelector('.scroll-nav');
+    // window.addEventListener('scroll', () => {
+    //     if (window.scrollY > window.innerHeight * 0.2) {
+    //         scrollNav.classList.add('scrolled');
+    //     } else {
+    //         scrollNav.classList.remove('scrolled');
+    //     }
+    // });
 </script>
 <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw-ughagpqXJOjRRzdPuwixlcZbHmghucCPPB5b9-m4J5G2w3ZuoOKzjrCQbCAN-IFMVg/exec'
