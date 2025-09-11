@@ -7,8 +7,9 @@
     <!-- Ensures responsive behavior on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Link to external CSS file for styling -->
+    <!-- Link to external CSS files for styling -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- Page title shown in browser tab -->
     <title>Mechanical Portfolio</title>
@@ -36,23 +37,49 @@
         </div>
     </div>
 
+    <!-- Modal for expanded project view -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-layout">
+                <div class="modal-left">
+                    <div class="image-gallery">
+                        <div class="main-image-container">
+                            <img class="main-image" src="" alt="">
+                        </div>
+                        <div class="thumbnail-strip">
+                            <!-- Thumbnails will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="project-details">
+                        <h1 class="project-title"></h1>
+                        <p class="project-subtitle"></p>
+                        <div class="project-description"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main container for page content -->
     <div class="content-container">
 
-        <!-- First Row of Projects -->
+        <!-- Row 1: Patriot, Battle Bots -->
         <div class="row">
-            <!-- First Project: Senior Capstone Toolio -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Senior Capstone Toolio</h1>
-                <p>Opted to design an autosorting toolbox.</p>
-                <img src="images/SeniorCapstone.png" alt="Image of an auto-sorting toolbox">
+            <!-- Patriot Missile Team -->
+            <div class="column" onclick="openProjectModal('patriot')">
+                <h1>Patriot Missile Team Intern</h1>
+                <p>Raytheon (RTX) – Patriot Missile Team Intern May 2025 - August 2025</p>
+                <img src="images/patriotimage.jpg" alt="Image of Patriot Missile Team project">
                 <div class="hidden-text">
-                    The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism. I utilized CAD modeling to analyze different design concepts and participated in the overall process from requirements to final fabrication and testing.
+                    <p>As an engineer on the Patriot missile program at Raytheon, I improved manufacturing efficiency by conducting DFM reviews that identified five critical issues and updating a drawing specification that cut supplier errors by 95%. My analytical work included performing a 30-part tolerance stack-up to ensure sub-assembly fit and calculating an assembly's center of gravity to within ±0.1 lb. I solved a key production issue by designing a new CCA prototype and creating three custom test fixtures, which eliminated all post-installation heat cycle failures. Additionally, I managed the engineering change request process for the Patriot shelters, ensuring strict configuration control and 100% BOM accuracy.</p>
                 </div>
             </div>
 
-            <!-- Second Project: Battle Bots -->
-            <div class="column" onclick="toggleText(this)">
+            <!-- Battle Bots -->
+            <div class="column" onclick="openProjectModal('battlebots')">
                 <h1>Battle Bots</h1>
                 <p>RoboJackets Battle Bots 3 lb team member.</p>
                 <img src="images/BattleBots.jpg" alt="Image of Battlebot internal functions">
@@ -62,66 +89,10 @@
             </div>
         </div>
 
-        <!-- Second Row of Projects -->
+        <!-- Row 2: Elephant, Plate Pulse -->
         <div class="row">
-            <!-- Project: Hytech Racing -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Hytech Racing</h1>
-                <p>Hytech racing Controls / Suspension team member.</p>
-                <img src="images/HytechRacing.png" alt="Hytech car racing image">
-                <div class="hidden-text">
-                    HyTech Racing is an award-winning student-run organization at the Georgia Institute of Technology dedicated to rigorous design and development of Formula SAE electric vehicles. Work as Sub-Team member for Controls / Suspension.
-                </div>
-            </div>
-
-            <!-- Project: Chess Board -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Shipwrecked Blossoms</h1>
-                <p>Culturally inpsired creative design project.</p>
-                <img src="images/shipwrecked.png" alt="Image of CAD model of wrecked ship on jetty.">
-                <div class="hidden-text">
-                    My product is a representation of the life after death of sunken boats. In my coastal town, fishing has a huge market, and many go on boats for enjoyment as well. Due to this, accidents happen and sometimes, boats sink, or more commonly crash. While this marks the death of the boat, it also marks the beginning of a new habitat for wildlife including fish and plants at the sea floor. To represent this, I made a flower vase consisting of 2 halves of a boat, a base, and a lobster trap buoy. I will incorporate Natural elements by filling the base with sand, using real rocks to create a fake Jetty in the center, and including shells and sea life that can survive and provide nutrients for the plants, prolonging the life of the flowers held inside the vase.
-                </div>
-            </div>
-        </div>
-
-        <!-- Third Row of Projects -->
-        <div class="row">
-            <!-- Project: Python Project -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Live streaming bot.</h1>
-                <p>Python Project connecting enhancing livestream capabilities.</p>
-                <img src="images/PythonProject.jpg" alt="Hytech car racing image">
-                <div class="hidden-text">
-                    Developed a software solution using Python to enable real-time interactions between TikTokLive and other clients through multiple APIs. The platform allows users to engage via live chat, triggering features like text-to-speech, in-game enemy spawning, and real-life light effects. This project enhanced my skills in Python programming, API integration, software development, and problem-solving, while also providing experience in managing complex projects and negotiating service value.
-                </div>
-            </div>
-
-            <!-- New Project: Patriot Missile Team -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Patriot Missile Team Intern</h1>
-                <p>Raytheon (RTX) – Patriot Missile Team Intern May 2025 - August 2025</p>
-                <img src="images/patriotimage.jpg" alt="Image of Patriot Missile Team project">
-                <div class="hidden-text">
-                    <p>As an engineer on the Patriot missile program at Raytheon, I improved manufacturing efficiency by conducting DFM reviews that identified five critical issues and updating a drawing specification that cut supplier errors by 95%. My analytical work included performing a 30-part tolerance stack-up to ensure sub-assembly fit and calculating an assembly's center of gravity to within ±0.1 lb. I solved a key production issue by designing a new CCA prototype and creating three custom test fixtures, which eliminated all post-installation heat cycle failures. Additionally, I managed the engineering change request process for the Patriot shelters, ensuring strict configuration control and 100% BOM accuracy.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fourth Row of Projects (formerly two separate rows) -->
-        <div class="row">
-            <!-- New Project: Plate Pulse -->
-            <div class="column" onclick="toggleText(this)">
-                <h1>Plate Pulse</h1>
-                <p>Developing a social media application for automotive enthusiasts.</p>
-                <img src="images/platepulse.png" alt="Image for Plate Pulse project">
-                <div class="hidden-text">
-                    <p>As the Founder of Plate Pulse, I am developing a cross-platform social media application using React Native to connect the automotive enthusiast community. I implemented a core feature for license plate lookups by integrating a third-party DMV API with end-to-end data encryption. To scale the platform, I am also assembling a team of software engineers and marketing personnel to boost market visibility and drive user acquisition.</p>
-                </div>
-            </div>
-
-            <!-- Project: Elephant in the Room -->
-            <div class="column" onclick="toggleText(this)">
+            <!-- Elephant in the Room -->
+            <div class="column" onclick="openProjectModal('elephant')">
                 <h1>Elephant in the Room</h1>
                 <p>My ME 2110 Project.</p>
                 <img src="images/me2110.png" alt="Image of Elephant in the Room project">
@@ -129,12 +100,68 @@
                     <p>Details about the 'Elephant in the Room' ME 2110 project will go here.</p>
                 </div>
             </div>
+
+            <!-- Plate Pulse -->
+            <div class="column" onclick="openProjectModal('platepulse')">
+                <h1>Plate Pulse</h1>
+                <p>Developing a social media application for automotive enthusiasts.</p>
+                <img src="images/platepulse.png" alt="Image for Plate Pulse project">
+                <div class="hidden-text">
+                    <p>As the Founder of Plate Pulse, I am developing a cross-platform social media application using React Native to connect the automotive enthusiast community. I implemented a core feature for license plate lookups by integrating a third-party DMV API with end-to-end data encryption. To scale the platform, I am also assembling a team of software engineers and marketing personnel to boost market visibility and drive user acquisition.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Last Row: More Projects Soon! -->
+        <!-- Row 3: Capstone, Hytech -->
         <div class="row">
-            <!-- Original Project: More Projects Soon! -->
-            <div class="column" onclick="toggleText(this)">
+            <!-- Senior Capstone Toolio -->
+            <div class="column" onclick="openProjectModal('capstone')">
+                <h1>Senior Capstone Toolio</h1>
+                <p>Opted to design an autosorting toolbox.</p>
+                <img src="images/SeniorCapstone.png" alt="Image of an auto-sorting toolbox">
+                <div class="hidden-text">
+                    The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism. I utilized CAD modeling to analyze different design concepts and participated in the overall process from requirements to final fabrication and testing.
+                </div>
+            </div>
+
+            <!-- Hytech Racing -->
+            <div class="column" onclick="openProjectModal('hytech')">
+                <h1>Hytech Racing</h1>
+                <p>Hytech racing Controls / Suspension team member.</p>
+                <img src="images/HytechRacing.png" alt="Hytech car racing image">
+                <div class="hidden-text">
+                    HyTech Racing is an award-winning student-run organization at the Georgia Institute of Technology dedicated to rigorous design and development of Formula SAE electric vehicles. Work as Sub-Team member for Controls / Suspension.
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4: Shipwrecked, Live Streaming Bot -->
+        <div class="row">
+            <!-- Shipwrecked Blossoms -->
+            <div class="column" onclick="openProjectModal('shipwrecked')">
+                <h1>Shipwrecked Blossoms</h1>
+                <p>Culturally inpsired creative design project.</p>
+                <img src="images/shipwrecked.png" alt="Image of CAD model of wrecked ship on jetty.">
+                <div class="hidden-text">
+                    My product is a representation of the life after death of sunken boats. In my coastal town, fishing has a huge market, and many go on boats for enjoyment as well. Due to this, accidents happen and sometimes, boats sink, or more commonly crash. While this marks the death of the boat, it also marks the beginning of a new habitat for wildlife including fish and plants at the sea floor. To represent this, I made a flower vase consisting of 2 halves of a boat, a base, and a lobster trap buoy. I will incorporate Natural elements by filling the base with sand, using real rocks to create a fake Jetty in the center, and including shells and sea life that can survive and provide nutrients for the plants, prolonging the life of the flowers held inside the vase.
+                </div>
+            </div>
+
+            <!-- Live streaming bot -->
+            <div class="column" onclick="openProjectModal('livestream')">
+                <h1>Live streaming bot.</h1>
+                <p>Python Project connecting enhancing livestream capabilities.</p>
+                <img src="images/PythonProject.jpg" alt="Hytech car racing image">
+                <div class="hidden-text">
+                    Developed a software solution using Python to enable real-time interactions between TikTokLive and other clients through multiple APIs. The platform allows users to engage via live chat, triggering features like text-to-speech, in-game enemy spawning, and real-life light effects. This project enhanced my skills in Python programming, API integration, software development, and problem-solving, while also providing experience in managing complex projects and negotiating service value.
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5: More Projects Soon! -->
+        <div class="row">
+            <!-- More Projects Soon! -->
+            <div class="column" onclick="openProjectModal('moretocome')">
                 <h1>More Projects Soon!</h1>
                 <p>Currently working on development of website for GT startup.</p>
                 <img src="images/MoreToCome.png" alt="Blank Image">
@@ -146,8 +173,250 @@
 
     </div> <!-- End of container div -->
     
-    <!-- JavaScript to toggle text display when clicking on a project -->
+    <!-- JavaScript for modal system -->
     <script>
+        // Project data with multiple images and detailed descriptions
+        const projectData = {
+            capstone: {
+                title: "Senior Capstone Toolio",
+                subtitle: "Opted to design an autosorting toolbox.",
+                images: [
+                    "images/SeniorCapstone.png",
+                    "images/sortatool.png"
+                ],
+                description: `
+                    <p>The project goal is to create an electro-mechanical smart organizer in which a user can place an item on a pad scanner that can identify the item by type and size, and then the toolbox will organize itself using a robotic-like mechanism.</p>
+                    <br>
+                    <p>I utilized CAD modeling to analyze different design concepts and participated in the overall process from requirements to final fabrication and testing. This project involved extensive mechanical design work, electronics integration, and software development for the scanning and sorting algorithms.</p>
+                    <br>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Computer vision-based object recognition</li>
+                        <li>Automated mechanical sorting system</li>
+                        <li>Custom PCB design for control systems</li>
+                        <li>3D printed and machined components</li>
+                    </ul>
+                `
+            },
+            battlebots: {
+                title: "Battle Bots",
+                subtitle: "RoboJackets Battle Bots 3 lb team member.",
+                images: [
+                    "images/BattleBots.jpg",
+                    "images/welding.jpg"
+                ],
+                description: `
+                    <p>Engaged as part of the RoboJackets 3 lb Battle Bots team at Georgia Tech. We design, manufacture, and operate a functional RC robot competing with other three-pound robots.</p>
+                    <br>
+                    <p>I developed skills in working with teams on complex technical projects, while incorporating knowledge of material science and kinematics to create an effective, light-weight robot. The project required careful weight optimization while maintaining structural integrity under high-impact conditions.</p>
+                    <br>
+                    <p><strong>Technical Contributions:</strong></p>
+                    <ul>
+                        <li>Lightweight frame design using advanced materials</li>
+                        <li>Impact-resistant weapon systems</li>
+                        <li>Electronic speed controllers and motor selection</li>
+                        <li>Competition strategy and operational testing</li>
+                    </ul>
+                `
+            },
+            hytech: {
+                title: "Hytech Racing",
+                subtitle: "Hytech racing Controls / Suspension team member.",
+                images: [
+                    "images/HytechRacing.png"
+                ],
+                description: `
+                    <p>HyTech Racing is an award-winning student-run organization at the Georgia Institute of Technology dedicated to rigorous design and development of Formula SAE electric vehicles.</p>
+                    <br>
+                    <p>Working as a Sub-Team member for Controls / Suspension, I contribute to the development of high-performance electric racing vehicles that compete in international Formula SAE competitions.</p>
+                    <br>
+                    <p><strong>Areas of Focus:</strong></p>
+                    <ul>
+                        <li>Suspension geometry optimization</li>
+                        <li>Vehicle dynamics control systems</li>
+                        <li>Data acquisition and telemetry</li>
+                        <li>Performance testing and validation</li>
+                    </ul>
+                `
+            },
+            shipwrecked: {
+                title: "Shipwrecked Blossoms",
+                subtitle: "Culturally inspired creative design project.",
+                images: [
+                    "images/shipwrecked.png"
+                ],
+                description: `
+                    <p>My product is a representation of the life after death of sunken boats. In my coastal town, fishing has a huge market, and many go on boats for enjoyment as well. Due to this, accidents happen and sometimes, boats sink, or more commonly crash.</p>
+                    <br>
+                    <p>While this marks the death of the boat, it also marks the beginning of a new habitat for wildlife including fish and plants at the sea floor. To represent this, I made a flower vase consisting of 2 halves of a boat, a base, and a lobster trap buoy.</p>
+                    <br>
+                    <p>I will incorporate natural elements by filling the base with sand, using real rocks to create a fake jetty in the center, and including shells and sea life that can survive and provide nutrients for the plants, prolonging the life of the flowers held inside the vase.</p>
+                `
+            },
+            livestream: {
+                title: "Live Streaming Bot",
+                subtitle: "Python Project enhancing livestream capabilities.",
+                images: [
+                    "images/PythonProject.jpg"
+                ],
+                description: `
+                    <p>Developed a software solution using Python to enable real-time interactions between TikTokLive and other clients through multiple APIs. The platform allows users to engage via live chat, triggering features like text-to-speech, in-game enemy spawning, and real-life light effects.</p>
+                    <br>
+                    <p>This project enhanced my skills in Python programming, API integration, software development, and problem-solving, while also providing experience in managing complex projects and negotiating service value.</p>
+                    <br>
+                    <p><strong>Technical Features:</strong></p>
+                    <ul>
+                        <li>Real-time API integration with TikTok Live</li>
+                        <li>Text-to-speech engine integration</li>
+                        <li>Game interaction systems</li>
+                        <li>IoT lighting control systems</li>
+                        <li>Multi-threaded processing for real-time responses</li>
+                    </ul>
+                `
+            },
+            patriot: {
+                title: "Patriot Missile Team Intern",
+                subtitle: "Raytheon (RTX) – Patriot Missile Team Intern May 2025 - August 2025",
+                images: [
+                    "images/patriotimage.jpg"
+                ],
+                description: `
+                    <p>As an engineer on the Patriot missile program at Raytheon, I improved manufacturing efficiency by conducting DFM reviews that identified five critical issues and updating a drawing specification that cut supplier errors by 95%.</p>
+                    <br>
+                    <p>My analytical work included performing a 30-part tolerance stack-up to ensure sub-assembly fit and calculating an assembly's center of gravity to within ±0.1 lb. I solved a key production issue by designing a new CCA prototype and creating three custom test fixtures, which eliminated all post-installation heat cycle failures.</p>
+                    <br>
+                    <p>Additionally, I managed the engineering change request process for the Patriot shelters, ensuring strict configuration control and 100% BOM accuracy.</p>
+                    <br>
+                    <p><strong>Key Achievements:</strong></p>
+                    <ul>
+                        <li>95% reduction in supplier errors through specification updates</li>
+                        <li>Eliminated 100% of post-installation heat cycle failures</li>
+                        <li>Precision tolerance analysis within ±0.1 lb accuracy</li>
+                        <li>Streamlined engineering change request processes</li>
+                    </ul>
+                `
+            },
+            platepulse: {
+                title: "Plate Pulse",
+                subtitle: "Developing a social media application for automotive enthusiasts.",
+                images: [
+                    "images/platepulse.png"
+                ],
+                description: `
+                    <p>As the Founder of Plate Pulse, I am developing a cross-platform social media application using React Native to connect the automotive enthusiast community.</p>
+                    <br>
+                    <p>I implemented a core feature for license plate lookups by integrating a third-party DMV API with end-to-end data encryption. To scale the platform, I am also assembling a team of software engineers and marketing personnel to boost market visibility and drive user acquisition.</p>
+                    <br>
+                    <p><strong>Technical Stack:</strong></p>
+                    <ul>
+                        <li>React Native for cross-platform development</li>
+                        <li>DMV API integration with secure encryption</li>
+                        <li>Real-time messaging and social features</li>
+                        <li>Cloud-based backend infrastructure</li>
+                        <li>User authentication and privacy controls</li>
+                    </ul>
+                `
+            },
+            elephant: {
+                title: "Elephant in the Room",
+                subtitle: "My ME 2110 Project.",
+                images: [
+                    "images/me2110.png"
+                ],
+                description: `
+                    <p>Details about the 'Elephant in the Room' ME 2110 project will go here.</p>
+                    <br>
+                    <p>This project represents work completed as part of the ME 2110 Creative Decisions and Design course at Georgia Tech, focusing on innovative mechanical design solutions.</p>
+                `
+            },
+            moretocome: {
+                title: "More Projects Soon!",
+                subtitle: "Currently working on development of website for GT startup.",
+                images: [
+                    "images/MoreToCome.png"
+                ],
+                description: `
+                    <p>Come back soon...</p>
+                    <br>
+                    <p>I'm always working on new and exciting projects. Check back regularly to see what innovative solutions I'm developing next!</p>
+                `
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const project = projectData[projectId];
+            
+            if (!project) return;
+            
+            // Ensure clean state before opening
+            modal.classList.remove('closing');
+            modal.style.removeProperty('display');
+            
+            // Set project details
+            document.querySelector('.project-title').textContent = project.title;
+            document.querySelector('.project-subtitle').textContent = project.subtitle;
+            document.querySelector('.project-description').innerHTML = project.description;
+            
+            // Set main image
+            const mainImage = document.querySelector('.main-image');
+            mainImage.src = project.images[0];
+            mainImage.alt = project.title;
+            
+            // Create thumbnails
+            const thumbnailStrip = document.querySelector('.thumbnail-strip');
+            thumbnailStrip.innerHTML = '';
+            
+            project.images.forEach((imageSrc, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = imageSrc;
+                thumbnail.alt = `${project.title} image ${index + 1}`;
+                thumbnail.className = 'thumbnail';
+                if (index === 0) thumbnail.classList.add('active');
+                
+                thumbnail.onclick = () => {
+                    mainImage.src = imageSrc;
+                    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                    thumbnail.classList.add('active');
+                };
+                
+                thumbnailStrip.appendChild(thumbnail);
+            });
+            
+            // Show modal
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            // Play closing animation
+            modal.classList.add('closing');
+            modal.classList.remove('show');
+            // After animation ends, hide modal and cleanup
+            const onAnimEnd = () => {
+                modal.classList.remove('closing');
+                modal.removeEventListener('animationend', onAnimEnd);
+                document.body.style.overflow = 'auto';
+            };
+            modal.addEventListener('animationend', onAnimEnd);
+        }
+
+        // Close modal when clicking outside content
+        document.getElementById('projectModal').onclick = function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        };
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Legacy function for backwards compatibility
         function toggleText(element) {
             element.classList.toggle('active');
         }
