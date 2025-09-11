@@ -93,8 +93,8 @@ nav{
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: nowrap;
     width: 100%;
     padding: 10px 10%;
     background-color: #080808;
@@ -104,10 +104,18 @@ nav{
     pointer-events: auto;
 }
 
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 nav ul li{
     display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
+    margin: 0 20px;
 }
 
 nav ul li a{
@@ -115,6 +123,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     position: relative;
+    white-space: nowrap;
 }
 
 nav ul li a::after{
@@ -664,18 +673,20 @@ body {
     }
 
     nav ul {
-        display: flex;
+        gap: 10px;
+        flex-direction: row; /* Keep horizontal layout on mobile */
+        flex-wrap: nowrap; /* Prevent wrapping to new lines */
         justify-content: center;
-        width: 100%;
-        padding: 0;
+        align-items: center;
     }
 
     nav ul li {
-        margin: 8px 10px;
+        margin: 0 10px;
     }
 
     nav ul li a {
         font-size: 16px;
+        padding: 5px;
     }
 
     .row {
@@ -759,6 +770,24 @@ body {
 
 /* Extra small screens - stack vertically */
 @media only screen and (max-width: 480px) {
+    nav {
+        padding: 6px 4%;
+    }
+
+    nav ul {
+        gap: 8px;
+        flex-direction: row; /* Force horizontal */
+        flex-wrap: nowrap;
+    }
+
+    nav ul li {
+        margin: 0 6px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
     .modal-layout {
         flex-direction: column !important;
     }
@@ -791,3 +820,54 @@ body {
 }
 
 /* Portfolio nav sizing to match other pages on mobile */
+/* Align Mechanical Portfolio navigation to match Home page */
+nav {
+    justify-content: space-between; /* Match Home */
+    flex-wrap: wrap; /* Match Home */
+    padding: 10px 10%; /* Match Home */
+}
+
+/* Override mobile stacking for portfolio nav - keep horizontal like home */
+@media only screen and (max-width: 768px) {
+    .scroll-nav {
+        padding: 8px 5%;
+    }
+    
+    .scroll-nav ul {
+        flex-direction: row !important; /* Force horizontal */
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .scroll-nav ul li {
+        margin: 0 8px !important;
+    }
+    
+    .scroll-nav ul li a {
+        font-size: 16px !important;
+        padding: 6px 8px !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .scroll-nav {
+        padding: 6px 3%;
+    }
+    
+    .scroll-nav ul {
+        flex-direction: row !important; /* Force horizontal even on very small screens */
+        gap: 8px !important;
+    }
+    
+    .scroll-nav ul li {
+        margin: 0 4px !important;
+    }
+    
+    .scroll-nav ul li a {
+        font-size: 14px !important;
+        padding: 4px 6px !important;
+    }
+}
