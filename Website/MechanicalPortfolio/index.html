@@ -97,7 +97,7 @@
                 <p>My ME 2110 Project.</p>
                 <img src="images/me2110.png" alt="Image of Elephant in the Room project">
                 <div class="hidden-text">
-                    <p>Details about the 'Elephant in the Room' ME 2110 project will go here.</p>
+                    <p>For the final project of ME 2110 at Georgia Tech, my team and I built a robot for the "Inside Out 2" competition that autonomously completed multiple tasks within 40 seconds, earning 2nd Place in the overall Design Review.</p>
                 </div>
             </div>
 
@@ -324,9 +324,11 @@
                     "images/me2110.png"
                 ],
                 description: `
-                    <p>Details about the 'Elephant in the Room' ME 2110 project will go here.</p>
+                    <p>For the final project of the ME 2110: Creative Decisions and Design course at Georgia Tech, my team and I designed and constructed a robot for the "Inside Out 2" competition. The robot was engineered to autonomously score points by completing three distinct tasks within a 40-second time limit: collecting small objects ("emotions"), depositing "mind manuals" into a rotating carousel, and lifting a character ("Sadness") four feet into the air. This project was a comprehensive exercise in mechatronics, integrating mechanical design, electronics, and programming to solve a complex problem. In the final competition, our innovative and resource-efficient machine earned our team 2nd Place in the overall Design Review.</p>
                     <br>
-                    <p>This project represents work completed as part of the ME 2110 Creative Decisions and Design course at Georgia Tech, focusing on innovative mechanical design solutions.</p>
+                    <p>My primary responsibilities focused on the mechanical design and fabrication of several key subsystems. I played a significant role in developing the telescoping lift used to raise "Sadness." This mechanism consisted of four nested aluminum T-slots extended by a string-and-spool system powered by a large DC motor, allowing it to be both lightweight and strong. I also helped design the main deployment platform, which used a single pneumatic actuator and drawer slides to initiate two other tasks simultaneously. This launch action caused a sweeping arm to collect the "emotions" and extended a launcher that used the kinetic energy from the moving game field to dispense the "mind manuals," showcasing an efficient and integrated design.</p>
+                    <br>
+                    <p>Beyond the initial design phase, I was heavily involved in the robot's construction and testing. This project gave me extensive hands-on experience with fabrication techniques like 3D printing and working with various raw materials. Throughout this process, I refined my skills in mechanical design, system integration, and rapid prototyping. The experience taught me the critical importance of designing for reliability and consistency, and it significantly improved my ability to take a complex concept from an idea to a functional, competition-ready machine.</p>
                 `
             },
             moretocome: {
@@ -517,13 +519,18 @@
     </script>
     <script>
             const scrollNav = document.querySelector('.scroll-nav');
-    // window.addEventListener('scroll', () => {
-    //     if (window.scrollY > window.innerHeight * 0.2) {
-    //         scrollNav.classList.add('scrolled');
-    //     } else {
-    //         scrollNav.classList.remove('scrolled');
-    //     }
-    // });
+            if (scrollNav) {
+                // Ensure nav is visible on load
+                scrollNav.classList.add('scrolled');
+            }
+            // Optional: keep behavior on scroll if desired
+            // window.addEventListener('scroll', () => {
+            //     if (window.scrollY > window.innerHeight * 0.2) {
+            //         scrollNav.classList.add('scrolled');
+            //     } else {
+            //         scrollNav.classList.remove('scrolled');
+            //     }
+            // });
     </script>
 </body>
 </html>
