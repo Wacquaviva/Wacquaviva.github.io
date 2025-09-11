@@ -97,29 +97,39 @@ nav{
     flex-wrap: wrap;
     width: 100%;
     padding: 10px 10%;
-    font-size: 1em;
-    font-weight: normal;
-    box-sizing: border-box;
+    background-color: #080808;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
 }
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-nav ul li {
+
+nav ul li{
     display: inline-block;
-    margin: 0 20px;
+    list-style: none;
+    margin: 10px 20px;
 }
-nav ul li a {
+
+nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s;
-    padding: 8px 16px;
+    font-size: 20px;
+    position: relative;
 }
-nav ul li a:hover {
-    color: #ff004f;
+
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
 }
 
 nav.scrolled {
@@ -762,27 +772,3 @@ body {
 }
 
 /* Portfolio nav sizing to match other pages on mobile */
-@media only screen and (max-width: 768px) {
-    .scroll-nav {
-        padding: 8px 6%;
-    }
-    .scroll-nav ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-    }
-    .scroll-nav ul li {
-        margin: 6px 0;
-    }
-    .scroll-nav ul li a {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .scroll-nav ul li a {
-        font-size: 13px;
-    }
-}
