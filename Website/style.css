@@ -12,6 +12,7 @@
     align-items: center;
     gap: 32px;
     flex-wrap: wrap;
+    padding: 0 20px; /* Add padding for small screens */
 }
 .footer-contacts a {
     color: #fff;
@@ -29,6 +30,55 @@
     color: #fff;
     font-size: 1.1em;
     opacity: 0.7;
+}
+
+/* Footer responsive styles */
+@media only screen and (max-width: 768px) {
+    .footer-contacts {
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .footer-contacts a {
+        font-size: 1em;
+        padding: 4px 6px;
+    }
+    .footer-contacts span {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-contacts {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .footer-contacts a {
+        font-size: 0.9em;
+        padding: 3px 4px;
+    }
+    .footer-contacts span {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .site-footer {
+        padding: 20px 0 12px 0;
+    }
+    .footer-contacts {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 10px;
+    }
+    .footer-contacts a {
+        font-size: 0.95em;
+        padding: 6px 8px;
+        display: block;
+        text-align: center;
+    }
+    .footer-contacts span {
+        display: none; /* Hide separators when stacked vertically */
+    }
 }
 *{
     margin: 0;
