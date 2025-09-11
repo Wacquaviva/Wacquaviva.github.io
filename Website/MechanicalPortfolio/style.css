@@ -1,3 +1,35 @@
+/* Footer styles */
+.site-footer {
+    width: 100%;
+    padding: 24px 0 16px 0;
+    text-align: center;
+    background: none;
+    margin-top: 40px;
+}
+.footer-contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+.footer-contacts a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+    padding: 2px 4px;
+}
+.footer-contacts a:hover {
+    color: #ff004f;
+    border-bottom: 2px solid #ff004f;
+}
+.footer-contacts span {
+    color: #fff;
+    font-size: 1.1em;
+    opacity: 0.7;
+}
 /* General Reset */
 * {
     margin: 0;
@@ -65,11 +97,29 @@ nav{
     flex-wrap: wrap;
     width: 100%;
     padding: 10px 10%;
-    background-color: #080808;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
+    font-size: 1em;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 16px;
+}
+nav ul li a:hover {
+    color: #ff004f;
 }
 
 nav.scrolled {
