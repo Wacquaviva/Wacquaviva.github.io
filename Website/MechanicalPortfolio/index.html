@@ -66,76 +66,83 @@
     <!-- Main container for page content -->
     <div class="content-container">
 
-        <!-- Row 1: Patriot, Battle Bots -->
+        <!-- Row 1: Zipline Intern, Patriot -->
         <div class="row">
+            <!-- Zipline Intern -->
+            <div class="column" onclick="openProjectModal('zipline')">
+                <h1>Zipline Intern</h1>
+                <p>Zipline Manufacturing and Fixture Engineering intern January 2026 - April 2026</p>
+                <img src="images/zipline1.jpg" alt="Image of Zipline project">
+            </div>
+
             <!-- Patriot Missile Team -->
             <div class="column" onclick="openProjectModal('patriot')">
                 <h1>Patriot Missile Team Intern</h1>
                 <p>Raytheon (RTX) – Patriot Missile Team Intern May 2025 - August 2025</p>
                 <img src="images/patriotimage.jpg" alt="Image of Patriot Missile Team project">
             </div>
+        </div>
 
+        <!-- Row 2: Battle Bots, Elephant -->
+        <div class="row">
             <!-- Battle Bots -->
             <div class="column" onclick="openProjectModal('battlebots')">
                 <h1>Battle Bots</h1>
                 <p>RoboJackets Battle Bots 3 lb team member.</p>
                 <img src="images/BattleBots.jpg" alt="Image of Battlebot internal functions">
             </div>
-        </div>
 
-        <!-- Row 2: Elephant, Plate Pulse -->
-        <div class="row">
             <!-- Elephant in the Room -->
             <div class="column" onclick="openProjectModal('elephant')">
                 <h1>Elephant in the Room</h1>
                 <p>My ME 2110 Project.</p>
                 <img src="images/me2110.png" alt="Image of Elephant in the Room project">
             </div>
+        </div>
 
+        <!-- Row 3: Plate Pulse, Capstone -->
+        <div class="row">
             <!-- Plate Pulse -->
             <div class="column" onclick="openProjectModal('platepulse')">
                 <h1>Plate Pulse</h1>
                 <p>Developing a social media application for automotive enthusiasts.</p>
                 <img src="images/platepulse1.png" alt="Image for Plate Pulse project">
             </div>
-        </div>
 
-        <!-- Row 3: Capstone, Hytech -->
-        <div class="row">
             <!-- Senior Capstone Toolio -->
             <div class="column" onclick="openProjectModal('capstone')">
                 <h1>Senior Capstone Toolio</h1>
                 <p>Opted to design an autosorting toolbox.</p>
                 <img src="images/sortatool3.png" alt="Image of an auto-sorting toolbox">
             </div>
+        </div>
 
+        <!-- Row 4: Hytech, Shipwrecked -->
+        <div class="row">
             <!-- Hytech Racing -->
             <div class="column" onclick="openProjectModal('hytech')">
                 <h1>Hytech Racing</h1>
                 <p>Hytech racing Controls / Suspension team member.</p>
                 <img src="images/HytechRacing.png" alt="Hytech car racing image">
             </div>
-        </div>
 
-        <!-- Row 4: Shipwrecked, Live Streaming Bot -->
-        <div class="row">
             <!-- Shipwrecked Blossoms -->
             <div class="column" onclick="openProjectModal('shipwrecked')">
                 <h1>Shipwrecked Blossoms</h1>
                 <p>Culturally inpsired creative design project.</p>
                 <img src="images/shipwrecked.png" alt="Image of CAD model of wrecked ship on jetty.">
             </div>
+        </div>
 
+        <!-- Row 5: Live Streaming Bot, More Projects Soon! -->
+        <div class="row">
             <!-- Live streaming bot -->
             <div class="column" onclick="openProjectModal('livestream')">
                 <h1>Live streaming bot.</h1>
                 <p>Python Project connecting enhancing livestream capabilities.</p>
                 <img src="images/PythonProject.jpg" alt="Hytech car racing image">
             </div>
-        </div>
 
-        <!-- Row 5: More Projects Soon! -->
-        <div class="row">
             <!-- More Projects Soon! -->
             <div class="column" onclick="openProjectModal('moretocome')">
                 <h1>More Projects Soon!</h1>
@@ -160,6 +167,16 @@
 
         // Project data with multiple images and detailed descriptions
         const projectData = {
+            zipline: {
+                title: "Zipline Intern",
+                subtitle: "Zipline Manufacturing and Fixture Engineering intern January 2026 - April 2026",
+                images: [
+                    "images/zipline1.jpg"
+                ],
+                description: `
+                    <p>Can't wait to make burritos fall from the sky!</p>
+                `
+            },
             capstone: {
                 title: "Senior Capstone Toolio",
                 subtitle: "Opted to design an autosorting toolbox.",
